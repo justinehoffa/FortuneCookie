@@ -1,7 +1,7 @@
 ﻿'Justine Hoffa
 'RCET0265
 'Fall2020
-'
+'https://github.com/justinehoffa/FortuneCookie
 
 Option Strict On
 Option Explicit On
@@ -12,11 +12,17 @@ Module FortuneCookie
     Sub Main()
         Dim randomNumber As Integer
         Randomize()
+        Dim quit As String
 
-        Console.WriteLine("Press enter for your fourtune.")
+
         Do
-            randomNumber = GetRandomNumber(1, 2)
+            Console.WriteLine("Press enter for your fourtune.")
+            quit = Console.ReadLine()
+            If quit = "q" Then
+                Exit Sub
+            End If
 
+            randomNumber = GetRandomNumber(1, 2)
 
             Select Case randomNumber
                 Case 1
@@ -27,8 +33,11 @@ Module FortuneCookie
                     Console.WriteLine("yeet")
             End Select
 
-            Console.ReadLine()
-
+            quit = Console.ReadLine()
+            If quit = "q" Then
+                Exit Sub
+            End If
+            Console.Clear()
         Loop
 
     End Sub
