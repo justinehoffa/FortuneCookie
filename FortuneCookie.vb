@@ -12,9 +12,8 @@ Module FortuneCookie
 
     Sub Main()
         Dim randomNumber As Integer
-        Randomize()
+        Randomize() ' This should go inside random number method - TJR
         Dim quit As String
-
 
         Do
             Console.WriteLine("Press enter for your fourtune.")
@@ -24,7 +23,6 @@ Module FortuneCookie
             End If
 
             randomNumber = GetRandomNumber(1, 2)
-
             Select Case randomNumber
                 Case 1
                     Console.WriteLine("dee dee mega doo doo")
